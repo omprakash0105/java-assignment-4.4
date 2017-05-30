@@ -1,0 +1,59 @@
+class employe
+{
+    protected int emp_no;
+    protected String name;
+    protected double salary;
+    public employe(int empno,String nam,double sal)
+    {
+        emp_no=empno;
+        name=nam;
+        salary=sal;
+    }
+    public void emplo_data()
+    {
+        System.out.println("\nEmploy no.="+emp_no);  
+        System.out.println("Name="+name);
+        System.out.println("Salary="+salary);
+    }
+}
+class manager extends employe
+{
+	int travelallowance =15;
+    public manager(int empno,String nam,double sal)
+    {
+        super(empno,nam,sal);
+        sal= (sal*(travelallowance*0.01))+sal;
+    }
+    public void managerdata()
+    {
+        System.out.println("\nEmploy no.="+emp_no);
+        System.out.println("Name="+name);
+        salary= (salary*(travelallowance*0.01))+salary;
+        System.out.println("Salary="+salary);
+    }
+}
+class trainee extends employe
+{
+	int travelallowance =10;
+    public trainee(int empno,String nam,double sal)
+    {
+        super(empno,nam,sal);
+        sal= (sal*(travelallowance*0.01))+sal;
+    }
+    public void traineedata()
+    {
+        System.out.println("\nEmploy no.="+emp_no);
+        System.out.println("Name="+name);
+        salary= (salary*(travelallowance*0.01))+salary;
+        System.out.println("Salary="+salary);
+    }
+}
+public class Inheritance {
+	public static void main(String args[])
+	{
+		manager man= new manager(2,"Arun",50000);
+		man.managerdata();
+		trainee tran= new trainee(1,"Gaurav",50000);
+		tran.traineedata();
+	}
+}
